@@ -1,0 +1,86 @@
+---
+title: "RMarkdown Outline"
+author: "Connor Guest"
+subtitle: "Use this to structure your reports"
+date: "6/5/2019"
+output: 
+  html_document:
+    theme: cosmo
+    highlight: monochrome
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    code_folding: hide
+    number_sections: true
+    df_print: kable
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+[RMarkdown Specifics](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style)
+
+ [Find many more selectors and a full CSS reference on the Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+
+## Set Up
+
+#### **Option	Effect**
+**include**	(Whether to show the R code chunk and its output.)   
+**echo**	(Whether to show the R code chunk.)  
+**message**	(Whether to show output messages.)  
+**warning**	(Whether to show output warnings.)  
+**eval**	(Whether to actually evaluate the R code chunk.)  
+*Structured like this: echo=FALSE*  
+[More options here](https://yihui.name/knitr/options/)
+
+#### **Figure Options**
+Option	- Possible Values	- Effect  
+fig.height	- Numeric, inches	- The height of the image in inches.  
+fig.width	- Numeric, inches	- The width of the image in inche.  
+fig.align	- One of "left", "right" or "center"	- The alignment of the image in the report.  
+[More options here](https://yihui.name/knitr/options/#plots)  
+*{r, fig.height = 8, fig.width = 4.5, fig.align = "center"}*
+
+#### Include a picture
+![An impressive mountain](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/
+Matterhorn_from_Domh%C3%BCtte_-_2.jpg/1200px-Matterhorn_from_Domh%C3%BCtte_-_2.jpg)
+
+## Summary
+
+This is where you are going to quickly summarize what you did.
+
+The **Core Payments** team has many [data sets](https://www.notion.so/paystack/Transaction-Analysis-Guide-9f93edf05d7b4fadaf14642aa888853a) to create their monthly report.  
+  
+In this report, *we make a reproducible monthly report* that will be recreated with only a few monior adjustments each month.  
+
+
+## Preparations
+```{r message=FALSE}
+library(tidyverse)
+library()
+```
+
+This is where you will load the necessary R packages.
+
+## Analysis
+
+### Data
+
+*This is where you will load the data.*
+
+```{r loading_data}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5807/datasets/ilo_data.RData"))
+```
+
+The loaded data contains `r count(ilo_data)` rows.  
+Number of rows was calculated using in-line r code! Using *r count(ilo_data)*
+
+
+### Preprocessing
+
+This is where you will preprocess the data.
+
+### Results
+
+This is where you will plot the data.
